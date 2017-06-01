@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.veryworks.android.contacts.domain.Data;
 
@@ -19,6 +20,9 @@ public class ContactActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact);
 
+        for(Data data : getContacts()){
+            Log.i("Contacts","이름="+data.getName() +", tel="+data.getTel());
+        }
     }
 
     public List<Data> getContacts() {
